@@ -2204,8 +2204,6 @@ namespace HsMod
             LoadCardEnd:    // todo: check Signature
                 try
                 {
-                    if (__instance.GetCard()?.GetControllerSide() == Player.Side.FRIENDLY)
-                        Utils.UpdateHeroTag(cardId);
                     __instance?.SetCardId(cardId);
                 }
                 catch (Exception ex)

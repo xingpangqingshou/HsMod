@@ -113,56 +113,6 @@ namespace HsMod
             return true;
         }
 
-        public static void UpdateHeroTag(string cardId)
-        {
-            if (!Utils.CheckInfo.IsHero(cardId, out _))
-            {
-                return;
-            }
-            try
-            {
-                var defLoader = DefLoader.Get();
-                if (defLoader == null)
-                {
-                    return;
-                }
-                //if (!defLoader.HasLoadedEntityDefs())
-                //{
-                //    defLoader.LoadAllEntityDefs();
-                //}
-                EntityDef entityDef = defLoader.GetEntityDef(cardId);
-                if (entityDef == null)
-                {
-                    return;
-                }
-                if (entityDef.HasTag(GAME_TAG.EMOTECHARACTER) && (entityDef?.GetTag(GAME_TAG.EMOTECHARACTER) > 0))
-                {
-                    GameState gameState = GameState.Get();
-                    if (gameState == null)
-                    {
-                        return;
-                    }
-                    int entityId = gameState.GetPlayerBySide(Player.Side.FRIENDLY).GetEntityId();
-                    int tag = gameState.GetEntity(entityId).GetTag(GAME_TAG.HERO_ENTITY);
-                    gameState.GetEntity(tag)?.SetTag(GAME_TAG.EMOTECHARACTER, entityDef.GetTag(GAME_TAG.EMOTECHARACTER));
-                }
-                if (entityDef.HasTag(GAME_TAG.CORNER_REPLACEMENT_TYPE) && (entityDef?.GetTag(GAME_TAG.CORNER_REPLACEMENT_TYPE) > 0))
-                {
-                    GameState gameState2 = GameState.Get();
-                    if (gameState2 == null)
-                    {
-                        return;
-                    }
-                    int entityId2 = gameState2.GetPlayerBySide(Player.Side.FRIENDLY).GetEntityId();
-                    gameState2.GetEntity(entityId2)?.SetTag(GAME_TAG.CORNER_REPLACEMENT_TYPE, entityDef.GetTag(GAME_TAG.CORNER_REPLACEMENT_TYPE));
-                    new CornerSpellReplacementManager(false)?.UpdateCornerReplacements(CornerReplacementSpellType.NONE, CornerReplacementSpellType.NONE);
-                }
-            }
-            catch (Exception ex)
-            {
-                Utils.MyLogger(BepInEx.Logging.LogLevel.Error, ex);
-            }
-        }
 
 
         public static class CheckInfo
