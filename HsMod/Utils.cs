@@ -285,7 +285,7 @@ namespace HsMod
         public static void TryAutoReport()
         {
             var myPlayer = BnetPresenceMgr.Get()?.GetMyPlayer()?.GetAccountId();
-            List <Blizzard.GameService.SDK.Client.Integration.ReportType.SubcomplaintType> subcomplaintTypes = new List<Blizzard.GameService.SDK.Client.Integration.ReportType.SubcomplaintType>
+            List<Blizzard.GameService.SDK.Client.Integration.ReportType.SubcomplaintType> subcomplaintTypes = new List<Blizzard.GameService.SDK.Client.Integration.ReportType.SubcomplaintType>
             {
                 Blizzard.GameService.SDK.Client.Integration.ReportType.SubcomplaintType.BATTLETAG
             };
