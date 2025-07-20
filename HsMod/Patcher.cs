@@ -2016,6 +2016,14 @@ namespace HsMod
 
         public class PatchFavorite
         {
+            // 尝试屏蔽对手的时尚小垃圾。
+            [HarmonyPrefix]
+            [HarmonyPatch(typeof(CutsceneManager), "LoadSceneIfNeeded")]
+            public static void PatchLoadSceneIfNeeded(ref CutsceneSceneDef sceneDef, ref bool forceLoad)
+            {
+                if (sceneDef != null) sceneDef.SetupData.OpponentPetSkinDbId = 0;
+            }
+
             //加载处理
             [HarmonyPrefix]
             [HarmonyPatch(typeof(Entity), "LoadCard")]
