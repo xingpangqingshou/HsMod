@@ -551,7 +551,7 @@ namespace HsMod
                     if (record != null)
                     {
                         temp += "<tr>";
-                        temp += $"<td>{record.CardId}</td>";
+                        temp += $"<td>{record.ID}</td>";
                         temp += $"<td>{record.PetId}</td>";
 
                         temp += $"<td>{record.Name.GetString()}</td>";
