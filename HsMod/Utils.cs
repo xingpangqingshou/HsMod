@@ -1234,7 +1234,8 @@ namespace HsMod
             }
             else
             {
-                UIStatus.Get()?.AddInfo(LocalizationManager.GetLangValue("hsmod.declaration"), 6.666f);
+                if ((Localization.GetLocale() == Locale.zhCN) || (pluginInitLanague.Value == "zhCN") || (string.Compare(System.Globalization.CultureInfo.CurrentCulture.Name, "zh-CN") == 0))
+                    UIStatus.Get()?.AddInfo(LocalizationManager.GetLangValue("hsmod.declaration"), 6.666f);
             }
         }
 
