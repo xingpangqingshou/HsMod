@@ -97,6 +97,8 @@ namespace HsMod
         public static ConfigEntry<int> skinBob;
         public static ConfigEntry<int> skinHero;
         public static ConfigEntry<int> skinOpposingHero;
+        public static ConfigEntry<int> skinPet;
+        public static ConfigEntry<int> skinOpposingPet;
         public static ConfigEntry<bool> isSkinDefalutHeroEnable;
 
         public static ConfigEntry<bool> isShowFPSEnable;
@@ -238,6 +240,8 @@ namespace HsMod
             skinBgsBoard = config.Bind(LocalizationManager.GetLangValue("skinBgsBoard.label"), LocalizationManager.GetLangValue("skinBgsBoard.name"), -1, LocalizationManager.GetLangValue("skinBgsBoard.description"));
             skinBgsFinisher = config.Bind(LocalizationManager.GetLangValue("skinBgsFinisher.label"), LocalizationManager.GetLangValue("skinBgsFinisher.name"), -1, LocalizationManager.GetLangValue("skinBgsFinisher.description"));
             skinBob = config.Bind(LocalizationManager.GetLangValue("skinBob.label"), LocalizationManager.GetLangValue("skinBob.name"), -1, LocalizationManager.GetLangValue("skinBob.description"));
+            skinPet = config.Bind(LocalizationManager.GetLangValue("skinPet.label"), LocalizationManager.GetLangValue("skinPet.name"), -1, LocalizationManager.GetLangValue("skinPet.description"));
+            skinOpposingPet = config.Bind(LocalizationManager.GetLangValue("skinOpposingPet.label"), LocalizationManager.GetLangValue("skinOpposingPet.name"), -1, LocalizationManager.GetLangValue("skinOpposingPet.description"));
             isSkinDefalutHeroEnable = config.Bind(LocalizationManager.GetLangValue("isSkinDefalutHeroEnable.label"), LocalizationManager.GetLangValue("isSkinDefalutHeroEnable.name"), false, LocalizationManager.GetLangValue("isSkinDefalutHeroEnable.description"));
             skinHero = config.Bind(LocalizationManager.GetLangValue("skinHero.label"), LocalizationManager.GetLangValue("skinHero.name"), -1, LocalizationManager.GetLangValue("skinHero.description"));
             skinOpposingHero = config.Bind(LocalizationManager.GetLangValue("skinOpposingHero.label"), LocalizationManager.GetLangValue("skinOpposingHero.name"), -1, LocalizationManager.GetLangValue("skinOpposingHero.description"));
@@ -256,7 +260,7 @@ namespace HsMod
             keyShutUpBob = config.Bind(LocalizationManager.GetLangValue("keyShutUpBob.label"), LocalizationManager.GetLangValue("keyShutUpBob.name"), new KeyboardShortcut(KeyCode.B, KeyCode.LeftControl), LocalizationManager.GetLangValue("keyShutUpBob.description"));
             keyRefund = config.Bind(LocalizationManager.GetLangValue("keyRefund.label"), LocalizationManager.GetLangValue("keyRefund.name"), new KeyboardShortcut(KeyCode.Z, KeyCode.LeftControl), LocalizationManager.GetLangValue("keyRefund.description"));
             keyZeroDollarShopping = config.Bind(LocalizationManager.GetLangValue("keyZeroDollarShopping.label"), LocalizationManager.GetLangValue("keyZeroDollarShopping.name"), new KeyboardShortcut(KeyCode.Alpha0), LocalizationManager.GetLangValue("keyZeroDollarShopping.description"));
-            //keyRuin = config.Bind(LocalizationManager.GetLangValue("//keyRuin.label"), LocalizationManager.GetLangValue("//keyRuin.name"), new KeyboardShortcut(KeyCode.R, KeyCode.LeftControl), LocalizationManager.GetLangValue("//keyRuin.description"));
+            //keyRuin = config.Bind(LocalizationManager.GetLangValue("keyRuin.label"), LocalizationManager.GetLangValue("keyRuin.name"), new KeyboardShortcut(KeyCode.R, KeyCode.LeftControl), LocalizationManager.GetLangValue("keyRuin.description"));
             keyReadNewCards = config.Bind(LocalizationManager.GetLangValue("keyReadNewCards.label"), LocalizationManager.GetLangValue("keyReadNewCards.name"), new KeyboardShortcut(KeyCode.R, KeyCode.LeftControl), LocalizationManager.GetLangValue("keyReadNewCards.description"));
             keyShowFPS = config.Bind(LocalizationManager.GetLangValue("keyShowFPS.label"), LocalizationManager.GetLangValue("keyShowFPS.name"), new KeyboardShortcut(KeyCode.P, KeyCode.LeftControl), LocalizationManager.GetLangValue("keyShowFPS.description"));
 
