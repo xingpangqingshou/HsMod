@@ -58,6 +58,7 @@ namespace HsMod
 
         public static ConfigEntry<bool> isShutUpBobEnable;
         public static ConfigEntry<bool> isBgsGoldenEnable;
+        public static ConfigEntry<bool> isBgsSeasonTicketUnlock;
 
         public static ConfigEntry<bool> isOpponentGoldenCardShow;
         public static ConfigEntry<bool> isSignatureCardStateEnable;
@@ -233,6 +234,7 @@ namespace HsMod
 
             isShutUpBobEnable = config.Bind(LocalizationManager.GetLangValue("isShutUpBobEnable.label"), LocalizationManager.GetLangValue("isShutUpBobEnable.name"), false, LocalizationManager.GetLangValue("isShutUpBobEnable.description"));
             isBgsGoldenEnable = config.Bind(LocalizationManager.GetLangValue("isBgsGoldenEnable.label"), LocalizationManager.GetLangValue("isBgsGoldenEnable.name"), false, LocalizationManager.GetLangValue("isBgsGoldenEnable.description"));
+            isBgsSeasonTicketUnlock = config.Bind(LocalizationManager.GetLangValue("isBgsSeasonTicketUnlock.label"), LocalizationManager.GetLangValue("isBgsSeasonTicketUnlock.name"), false, LocalizationManager.GetLangValue("isBgsSeasonTicketUnlock.description"));
             //考虑导出单独配置
             skinCoin = config.Bind(LocalizationManager.GetLangValue("skinCoin.label"), LocalizationManager.GetLangValue("skinCoin.name"), -1, LocalizationManager.GetLangValue("skinCoin.description"));
             skinCardBack = config.Bind(LocalizationManager.GetLangValue("skinCardBack.label"), LocalizationManager.GetLangValue("skinCardBack.name"), -1, LocalizationManager.GetLangValue("skinCardBack.description"));
