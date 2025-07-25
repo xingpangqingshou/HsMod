@@ -1459,6 +1459,29 @@ namespace HsMod
                 return list;
             }
 
+            //解锁酒馆礼遇
+            [HarmonyPrefix]
+            [HarmonyPatch(typeof(MulliganManager), "ToggleHoldState", new Type[] { typeof(Card) })]
+            public static void PatchToggleHoldState(ref Card toggleCard)
+            {
+                if (!isBgsSeasonTicketUnlock.Value) return;
+                var entity = toggleCard?.GetEntity();
+                if (entity != null)
+                {
+                    entity.SetTag(GAME_TAG.BACON_LOCKED_MULLIGAN_HERO, false);
+                }
+
+            }
+            [HarmonyPrefix]
+            [HarmonyPatch(typeof(TB_BaconShop), "ConfigureLockedMulliganCardActor")]
+            public static bool PatchConfigureLockedMulliganCardActor(Actor actor, bool shown)
+            {
+                if (isBgsSeasonTicketUnlock.Value) {
+                    return false; 
+                }
+                return true;
+            }
+
             //快速战斗 - 理论上可以用于所有模式 现只应用于酒馆战旗或佣兵战纪的ai
             [HarmonyReversePatch]
             [HarmonyPatch(typeof(SpellController), "OnProcessTaskList")]
